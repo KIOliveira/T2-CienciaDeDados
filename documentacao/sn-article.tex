@@ -77,7 +77,7 @@
 %% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
 \newtheorem{proposition}[theorem]{Proposition}% 
 %%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
-    
+
 \theoremstyle{thmstyletwo}%
 \newtheorem{example}{Example}%
 \newtheorem{remark}{Remark}%
@@ -90,7 +90,7 @@
 
 \begin{document}
 
-\title[Article Title]{Article Title}
+\title[Article Title]{ Análise de Estatísticas de Jogo e sua Relação com os Resultados no Campeonato Brasileiro }
 
 %%=============================================================%%
 %% GivenName	-> \fnm{Joergen W.}
@@ -101,25 +101,19 @@
 %%  \sfx{IV}}\email{iauthor@gmail.com}
 %%=============================================================%%
 
-\author*[1,2]{\fnm{First} \sur{Author}}\email{iauthor@gmail.com}
+\author*[1,2]{\fnm{First} \sur{Caio César Souza Oliveira}}\email{caio.s.oliveira@unesp.br}
 
-\author[2,3]{\fnm{Second} \sur{Author}}\email{iiauthor@gmail.com}
-\equalcont{These authors contributed equally to this work.}
+\author[2,3]{\fnm{Second} \sur{Igor dos Reis Gomes}}\email{reis.gomes@unesp.br}
+\equalcont{Esses autores contribuíram igualmente para este trabalho.}
 
-\author[1,2]{\fnm{Third} \sur{Author}}\email{iiiauthor@gmail.com}
-\equalcont{These authors contributed equally to this work.}
-
-\affil*[1]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{100190}, \state{State}, \country{Country}}}
-
-\affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
-
-\affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
+\affil*[1]{\orgdiv{Bacharelado em Ciência da Computação}, \orgname{UNESP}, \orgaddress{\street{Av. Eng. Luís Edmundo Carrijo Coube, 14-01 - Vargem Limpa}, \city{Bauru}, \postcode{17033-360}, \state{São Paulo}, \country{Brasil}}}
 
 %%==================================%%
 %% Sample for unstructured abstract %%
 %%==================================%%
 
-\abstract{The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. Authors are advised to check the author instructions for the journal they are submitting to for word limits and if structural elements like subheadings, citations, or equations are permitted.}
+
+\abstract{Este trabalho apresenta uma análise exploratória das partidas do Campeonato Brasileiro no período de 2003 a 2023. A análise utiliza um conjunto de dados público do \textit{Kaggle} e integra informações de partidas, gols, cartões e estatísticas de jogo. A partir disso, foram realizados procedimentos estatísticos para se analisar as informações dos jogos com diversos tipos de testes de hipótese, como teste Qui-quadrado, tamanho de efeito entre outros para assim poder responder a pergunta de que se jogar os jogos em casa altera a probabilidade da vitória.}
 
 %%================================%%
 %% Sample for structured abstract %%
@@ -133,7 +127,7 @@
 % 
 % \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
 
-\keywords{keyword1, Keyword2, Keyword3, Keyword4}
+\keywords{análise exploratória de dados, teste de hipótese, Campeonato Brasileiro, mando de campo, futebol, ciência de dados}
 
 %%\pacs[JEL Classification]{D8, H51}
 
@@ -141,483 +135,227 @@
 
 \maketitle
 
-\section{Introduction}\label{sec1}
+\section{Introdução}\label{sec1}
 
-The Introduction section, of referenced text \cite{bib1} expands on the background of the work (some overlap with the Abstract is acceptable). The introduction should not include subheadings.
+O futebol é um esporte caracterizado pela interação de diversos fatores que podem influenciar o resultado de uma partida. Embora a vitória ou a derrota seja determinada pelo número de gols marcados, o desempenho das equipes ao longo do jogo pode ser descrito por diferentes estatísticas, como posse de bola, número de finalizações, chutes no alvo, escanteios, passes, faltas e cartões. A análise conjunta dessas informações permite investigar quais características do desempenho de uma equipe estão mais associadas à obtenção de resultados positivos.
 
-Springer Nature does not impose a strict layout as standard however authors are advised to check the individual requirements for the journal they are planning to submit to as there may be journal-level preferences. When preparing your text please also be aware that some stylistic choices are not supported in full text XML (publication version), including coloured font. These will not be replicated in the typeset article if it is accepted. 
+Nesse contexto, a Ciência de Dados oferece métodos para explorar grandes conjuntos de informações esportivas e identificar padrões que dificilmente seriam observados apenas pela análise individual das partidas. A utilização de técnicas de análise exploratória de dados permite inicialmente compreender a distribuição das variáveis, identificar possíveis relações entre as estatísticas e os resultados das partidas e observar diferenças no comportamento das equipes como mandantes e visitantes.
 
-\section{Results}\label{sec2}
+Este estudo utiliza um conjunto de dados do Campeonato Brasileiro de Futebol, contendo informações sobre partidas disputadas ao longo de diferentes temporadas, incluindo o resultado dos jogos e diversas estatísticas de desempenho das equipes. A partir desses dados, busca-se analisar a relação entre as características das partidas e o resultado obtido por cada equipe, considerando tanto indicadores ofensivos quanto aspectos relacionados à posse de bola, criação de oportunidades, disciplina e desempenho coletivo.
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+O objetivo é, portanto, explorar os dados e identificar quais estatísticas apresentam maior associação com a vitória ou derrota das equipes no Campeonato Brasileiro. Para isso, inicialmente é realizada uma análise exploratória dos dados, permitindo compreender suas características e estabelecer uma base para análises posteriores utilizando métodos estatísticos e técnicas de aprendizado de máquina. Dessa forma, o estudo procura transformar os registros das partidas em informações capazes de contribuir para uma melhor compreensão dos fatores relacionados ao desempenho das equipes.
 
-\section{This is an example for first level head---section head}\label{sec3}
+\section{Desenvolvimento}
 
-\subsection{This is an example for second level head---subsection head}\label{subsec2}
+\subsection{Fonte dos Dados}
 
-\subsubsection{This is an example for third level head---subsubsection head}\label{subsubsec2}
+O estudo utiliza conjuntos de dados referentes a partidas do Campeonato Brasileiro, organizados de forma a contemplar diferentes aspectos dos jogos. A base \textit{campeonato-brasileiro-full.csv} reúne informações gerais das partidas, incluindo as equipes participantes e seus respectivos resultados. Esse conjunto fornece a estrutura principal para identificar as partidas analisadas e estabelecer a relação entre as equipes e os resultados obtidos. A partir dessas informações, torna-se possível classificar os jogos de acordo com vitória, derrota ou empate. Dessa maneira, a base geral é utilizada como referência para a organização das demais informações empregadas no estudo. Sua utilização permite estabelecer uma visão abrangente dos confrontos analisados ao longo da competição.
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+Complementarmente, o arquivo \textit{campeonato-brasileiro-estatisticas-full.csv} apresenta informações relacionadas ao desempenho das equipes durante as partidas. Entre as estatísticas consideradas estão aspectos como posse de bola, finalizações, finalizações no alvo, passes, faltas, cartões, impedimentos e escanteios. Esses dados são particularmente relevantes para o objetivo do estudo, pois permitem investigar a relação entre o desempenho apresentado em campo e o resultado final das partidas. A comparação dessas variáveis entre equipes vencedoras e derrotadas possibilita identificar padrões e diferenças no comportamento estatístico dos times. Dessa forma, o conjunto de estatísticas constitui uma das principais fontes para a análise exploratória e para a aplicação dos métodos de Ciência de Dados.
 
-\section{Equations}\label{sec4}
+Os arquivos \textit{campeonato-brasileiro-gols.csv} e \textit{campeonato-brasileiro-cartoes.csv} complementam as informações anteriores ao detalhar eventos ocorridos durante as partidas. A base de gols permite analisar os registros de gols considerando informações relacionadas às equipes, aos atletas e aos momentos em que os eventos ocorreram. Já a base de cartões acrescenta informações referentes aos cartões aplicados durante os confrontos, permitindo observar aspectos disciplinares das equipes. A integração dessas diferentes fontes possibilita uma análise mais ampla das partidas, relacionando o resultado final a diferentes características do desempenho esportivo. Assim, os conjuntos de dados fornecem informações complementares que podem ser utilizadas conjuntamente para investigar quais estatísticas apresentam relação com a ocorrência de vitórias e derrotas no Campeonato Brasileiro.
 
-Equations in \LaTeX\ can either be inline or on-a-line by itself (``display equations''). For
-inline equations use the \verb+$...$+ commands. E.g.: The equation
-$H\psi = E \psi$ is written via the command \verb+$H \psi = E \psi$+.
+\subsection{Tratamento dos Dados}\label{subsec_tratamento}
 
-For display equations (with auto generated equation numbers)
-one can use the equation or align environments:
-\begin{equation}
-\|\tilde{X}(k)\|^2 \leq\frac{\sum\limits_{i=1}^{p}\left\|\tilde{Y}_i(k)\right\|^2+\sum\limits_{j=1}^{q}\left\|\tilde{Z}_j(k)\right\|^2 }{p+q}.\label{eq1}
-\end{equation}
-where,
-\begin{align}
-D_\mu &=  \partial_\mu - ig \frac{\lambda^a}{2} A^a_\mu \nonumber \\
-F^a_{\mu\nu} &= \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^a_\nu \label{eq2}
-\end{align}
-Notice the use of \verb+\nonumber+ in the align environment at the end
-of each line, except the last, so as not to produce equation numbers on
-lines where no equation numbers are required. The \verb+\label{}+ command
-should only be used at the last line of an align environment where
-\verb+\nonumber+ is not used.
-\begin{equation}
-Y_\infty = \left( \frac{m}{\textrm{GeV}} \right)^{-3}
-    \left[ 1 + \frac{3 \ln(m/\textrm{GeV})}{15}
-    + \frac{\ln(c_2/5)}{15} \right]
-\end{equation}
-The class file also supports the use of \verb+\mathbb{}+, \verb+\mathscr{}+ and
-\verb+\mathcal{}+ commands. As such \verb+\mathbb{R}+, \verb+\mathscr{R}+
-and \verb+\mathcal{R}+ produces $\mathbb{R}$, $\mathscr{R}$ and $\mathcal{R}$
-respectively (refer Subsubsection~\ref{subsubsec2}).
+O tratamento dos dados foi realizado como etapa inicial da Análise Exploratória de Dados (EDA), com o objetivo de integrar e padronizar as diferentes bases utilizadas no estudo. As fontes apresentavam diferentes níveis de granularidade, sendo algumas organizadas por partida, outras por gol, cartão ou estatística individual de cada equipe. Para possibilitar a comparação entre mandante e visitante, essas informações foram reorganizadas de forma que cada registro representasse uma única partida, contendo os dados correspondentes às duas equipes. Esse procedimento permitiu estabelecer uma estrutura comum entre as diferentes fontes e facilitou a realização das análises posteriores. Após a integração, foram consideradas variáveis relacionadas ao resultado da partida, gols, estatísticas de desempenho e eventos ocorridos durante os jogos. Dessa maneira, a etapa de preparação transformou as bases originais em um conjunto de dados adequado à análise estatística.
 
-\section{Tables}\label{sec5}
+Durante a exploração inicial, também foi realizada uma análise da presença de valores ausentes. A identificação desses valores foi importante porque algumas estatísticas não estavam disponíveis para todas as temporadas analisadas. As estatísticas detalhadas de jogo apresentaram dados reais principalmente no período de 2015 a 2023, enquanto as informações de gols e cartões possuem cobertura a partir de períodos diferentes. Dessa forma, os valores que anteriormente apareciam como zero, mas representavam ausência de registro, foram convertidos para valores nulos (`NaN`). Essa alteração evita que partidas sem informação sejam interpretadas incorretamente como partidas nas quais determinado evento não ocorreu. Além disso, o uso dos valores nulos permite que operações estatísticas, como o cálculo de médias, desconsiderem automaticamente as observações sem dados disponíveis. Assim, o tratamento preserva a diferença entre uma ocorrência igual a zero e uma informação que não foi coletada.
 
-Tables can be inserted via the normal table and tabular environment. To put
-footnotes inside tables you should use \verb+\footnotetext[]{...}+ tag.
-The footnote appears just below the table itself (refer Tables~\ref{tab1} and \ref{tab2}). 
-For the corresponding footnotemark use \verb+\footnotemark[...]+
+Após a padronização e o tratamento dos valores ausentes, o conjunto de dados foi utilizado para a realização da análise exploratória. Foram calculadas estatísticas descritivas relacionadas aos gols do mandante e do visitante, ao total de gols e ao saldo da partida, além da distribuição dos resultados entre vitória do mandante, empate e vitória do visitante. A EDA também possibilitou comparar diferentes características de desempenho entre as equipes, como chutes, chutes no alvo, posse de bola, passes, faltas, impedimentos, escanteios e cartões. Para as estatísticas disponíveis entre 2015 e 2023, foram consideradas 3.419 partidas, enquanto a base geral tratada contempla 8.405 partidas entre 2003 e 2023. Por fim, o conjunto tratado foi exportado para um novo arquivo, chamado \texttt{`campeonato\_brasileiro\_tratado.csv`}, permitindo que os dados preparados fossem usados nas etapas seguintes.
+
+\section{Resultados}\label{sec2}
+
+A análise seguiu duas etapas complementares. Primeiro, uma análise exploratória de dados (EDA) descreveu a magnitude e a estrutura do efeito de mando ao longo das 8.405 partidas do período 2003--2023. Em seguida, quatro testes de hipótese formais, com nível de significância $\alpha = 0{,}05$, avaliaram se esse efeito é estatisticamente distinguível do acaso e investigaram possíveis mecanismos explicativos, usando as 3.419 partidas com estatísticas de jogo disponíveis (2015--2023) sempre que aplicável. Os testes foram implementados em Python, com as bibliotecas \texttt{pandas} e \texttt{scipy.stats}.
+
+\subsection{Distribuição dos resultados}\label{subsec_dist}
+
+Das 8.405 partidas analisadas, o mandante venceu 49,7\% (4.179 partidas), houve empate em 26,4\% (2.221) e o visitante venceu em 23,9\% (2.005) --- uma razão de 2,08 vitórias do mandante para cada vitória do visitante (Figura~\ref{fig_dist}). As estatísticas descritivas de gols reforçam esse padrão: o mandante marca em média 1,54 gol por partida (dp~1,23) contra 1,03 do visitante (dp~1,03), resultando em saldo médio do mandante de 0,51 gol (dp~1,56). O mandante marca ao menos um gol em 79,3\% das partidas e não sofre gols em 36,4\% delas, contra 63,6\% e 20,7\% do visitante, respectivamente --- uma razão de 1,76$\times$ na defesa, superior à razão de 1,25$\times$ observada no ataque.
 
 \begin{table}[h]
-\caption{Caption text}\label{tab1}%
-\begin{tabular}{@{}llll@{}}
+\caption{Estatísticas descritivas das variáveis de desfecho (8.405 partidas, 2003--2023)}\label{tab_desc}
+\begin{tabular}{@{}lcccc@{}}
 \toprule
-Column 1 & Column 2  & Column 3 & Column 4\\
+Variável & Média & Desvio-padrão & Mín. & Máx.\\
 \midrule
-row 1    & data 1   & data 2  & data 3  \\
-row 2    & data 4   & data 5\footnotemark[1]  & data 6  \\
-row 3    & data 7   & data 8  & data 9\footnotemark[2]  \\
+Gols do mandante   & 1,54 & 1,23 & 0 & 7\\
+Gols do visitante  & 1,03 & 1,03 & 0 & 7\\
+Total de gols       & 2,57 & 1,64 & 0 & 11\\
+Saldo do mandante   & 0,51 & 1,56 & $-$7 & 7\\
 \botrule
 \end{tabular}
-\footnotetext{Source: This is an example of table footnote. This is an example of table footnote.}
-\footnotetext[1]{Example for a first table footnote. This is an example of table footnote.}
-\footnotetext[2]{Example for a second table footnote. This is an example of table footnote.}
 \end{table}
-
-\noindent
-The input format for the above table is as follows:
-
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-\bigskip
-\begin{verbatim}
-\begin{table}[<placement-specifier>]
-\caption{<table-caption>}\label{<table-label>}%
-\begin{tabular}{@{}llll@{}}
-\toprule
-Column 1 & Column 2 & Column 3 & Column 4\\
-\midrule
-row 1 & data 1 & data 2	 & data 3 \\
-row 2 & data 4 & data 5\footnotemark[1] & data 6 \\
-row 3 & data 7 & data 8	 & data 9\footnotemark[2]\\
-\botrule
-\end{tabular}
-\footnotetext{Source: This is an example of table footnote. 
-This is an example of table footnote.}
-\footnotetext[1]{Example for a first table footnote.
-This is an example of table footnote.}
-\footnotetext[2]{Example for a second table footnote. 
-This is an example of table footnote.}
-\end{table}
-\end{verbatim}
-\bigskip
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-
-\begin{table}[h]
-\caption{Example of a lengthy table which is set to full textwidth}\label{tab2}
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lcccccc}
-\toprule%
-& \multicolumn{3}{@{}c@{}}{Element 1\footnotemark[1]} & \multicolumn{3}{@{}c@{}}{Element 2\footnotemark[2]} \\\cmidrule{2-4}\cmidrule{5-7}%
-Project & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ \\
-\midrule
-Element 3  & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$\\
-Element 4  & 500 A & 961  & $922\pm10$  & 900 A & 1268 & $1092\pm40$\\
-\botrule
-\end{tabular*}
-\footnotetext{Note: This is an example of table footnote. This is an example of table footnote this is an example of table footnote this is an example of~table footnote this is an example of table footnote.}
-\footnotetext[1]{Example for a first table footnote.}
-\footnotetext[2]{Example for a second table footnote.}
-\end{table}
-
-In case of double column layout, tables which do not fit in single column width should be set to full text width. For this, you need to use \verb+\begin{table*}+ \verb+...+ \verb+\end{table*}+ instead of \verb+\begin{table}+ \verb+...+ \verb+\end{table}+ environment. Lengthy tables which do not fit in textwidth should be set as rotated table. For this, you need to use \verb+\begin{sidewaystable}+ \verb+...+ \verb+\end{sidewaystable}+ instead of \verb+\begin{table*}+ \verb+...+ \verb+\end{table*}+ environment. This environment puts tables rotated to single column width. For tables rotated to double column width, use \verb+\begin{sidewaystable*}+ \verb+...+ \verb+\end{sidewaystable*}+.
-
-\begin{sidewaystable}
-\caption{Tables which are too long to fit, should be written using the ``sidewaystable'' environment as shown here}\label{tab3}
-\begin{tabular*}{\textheight}{@{\extracolsep\fill}lcccccc}
-\toprule%
-& \multicolumn{3}{@{}c@{}}{Element 1\footnotemark[1]}& \multicolumn{3}{@{}c@{}}{Element\footnotemark[2]} \\\cmidrule{2-4}\cmidrule{5-7}%
-Projectile & Energy	& $\sigma_{calc}$ & $\sigma_{expt}$ & Energy & $\sigma_{calc}$ & $\sigma_{expt}$ \\
-\midrule
-Element 3 & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$ \\
-Element 4 & 500 A & 961  & $922\pm10$  & 900 A & 1268 & $1092\pm40$ \\
-Element 5 & 990 A & 1168 & $1547\pm12$ & 780 A & 1166 & $1239\pm100$ \\
-Element 6 & 500 A & 961  & $922\pm10$  & 900 A & 1268 & $1092\pm40$ \\
-\botrule
-\end{tabular*}
-\footnotetext{Note: This is an example of table footnote this is an example of table footnote this is an example of table footnote this is an example of~table footnote this is an example of table footnote.}
-\footnotetext[1]{This is an example of table footnote.}
-\end{sidewaystable}
-
-\section{Figures}\label{sec6}
-
-As per the \LaTeX\ standards you need to use eps images for \LaTeX\ compilation and \verb+pdf/jpg/png+ images for \verb+PDFLaTeX+ compilation. This is one of the major difference between \LaTeX\ and \verb+PDFLaTeX+. Each image should be from a single input .eps/vector image file. Avoid using subfigures. The command for inserting images for \LaTeX\ and \verb+PDFLaTeX+ can be generalized. The package used to insert images in \verb+LaTeX/PDFLaTeX+ is the graphicx package. Figures can be inserted via the normal figure environment as shown in the below example:
-
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-\bigskip
-\begin{verbatim}
-\begin{figure}[<placement-specifier>]
-\centering
-\includegraphics{<eps-file>}
-\caption{<figure-caption>}\label{<figure-label>}
-\end{figure}
-\end{verbatim}
-\bigskip
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{fig.eps}
-\caption{This is a widefig. This is an example of long caption this is an example of long caption  this is an example of long caption this is an example of long caption}\label{fig1}
+\includegraphics[width=0.7\textwidth]{figuras/distribuicao_de_resultados.png}
+\caption{Distribuição dos resultados das partidas do Campeonato Brasileiro (2003--2023).}\label{fig_dist}
 \end{figure}
 
-In case of double column layout, the above format puts figure captions/images to single column width. To get spanned images, we need to provide \verb+\begin{figure*}+ \verb+...+ \verb+\end{figure*}+.
+\subsection{Estabilidade da vantagem ao longo do tempo}\label{subsec_tempo}
 
-For sample purpose, we have included the width of images in the optional argument of \verb+\includegraphics+ tag. Please ignore this. 
+A vantagem de mando não é um artefato de poucas temporadas: o mandante teve percentual de vitórias superior ao do visitante em todas as 21 temporadas analisadas. A taxa de vitória do mandante variou entre 43,7\% (2020) e 54,7\% (2008), com desvio-padrão de apenas 3,3 pontos percentuais entre temporadas (Figura~\ref{fig_tempo}). Quando a vantagem é medida em gols por partida em vez de vitórias, observa-se uma tendência de queda: a diferença média entre gols do mandante e do visitante caiu de 0,597 gol (2003--2009) para 0,403 gol (2017--2023), uma redução de aproximadamente 33\%, com inclinação linear de $-0{,}0123$ gol por temporada.
 
-\section{Algorithms, Program codes and Listings}\label{sec7}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/mando_ao_longo_do_tempo.png}
+\caption{Percentual de vitória do mandante, empate e vitória do visitante por temporada.}\label{fig_tempo}
+\end{figure}
 
-Packages \verb+algorithm+, \verb+algorithmicx+ and \verb+algpseudocode+ are used for setting algorithms in \LaTeX\ using the format:
+\subsection{Teste binomial exato: o mando altera a probabilidade de vitória?}\label{subsec_binom}
 
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-\bigskip
-\begin{verbatim}
-\begin{algorithm}
-\caption{<alg-caption>}\label{<alg-label>}
-\begin{algorithmic}[1]
-. . .
-\end{algorithmic}
-\end{algorithm}
-\end{verbatim}
-\bigskip
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
+Para isolar o efeito do mando do acaso, testou-se se, entre as 6.184 partidas decididas (sem empate), o mandante venceria com probabilidade igual a 0,5, como esperado sob uma ``moeda honesta''.
 
-You may refer above listed package documentations for more details before setting \verb+algorithm+ environment. For program codes, the ``verbatim'' package is required and the command to be used is \verb+\begin{verbatim}+ \verb+...+ \verb+\end{verbatim}+. 
+\textbf{H0:} entre partidas decididas, o mandante vence com probabilidade 0,5.\\
+\textbf{H1:} a probabilidade de vitória do mandante é diferente de 0,5.
 
-Similarly, for \verb+listings+, use the \verb+listings+ package. \verb+\begin{lstlisting}+ \verb+...+ \verb+\end{lstlisting}+ is used to set environments similar to \verb+verbatim+ environment. Refer to the \verb+lstlisting+ package documentation for more details.
+O mandante venceu 4.179 das 6.184 partidas decididas (67,6\%), um desvio de 27,6 desvios-padrão em relação ao valor esperado sob H0 (IC 95\% $[66{,}4\%, 68{,}7\%]$; $p = 1{,}15\times10^{-171}$). H0 é rejeitada com ampla margem: jogar em casa altera de forma inequívoca a probabilidade de vitória.
 
-A fast exponentiation procedure:
+\subsection{Tamanho de efeito}\label{subsec_efeito}
 
-\lstset{texcl=true,basicstyle=\small\sf,commentstyle=\small\rm,mathescape=true,escapeinside={(*}{*)}}
-\begin{lstlisting}
-begin
-  for $i:=1$ to $10$ step $1$ do
-      expt($2,i$);  
-      newline() od                (*\textrm{Comments will be set flush to the right margin}*)
-where
-proc expt($x,n$) $\equiv$
-  $z:=1$;
-  do if $n=0$ then exit fi;
-     do if odd($n$) then exit fi;                 
-        comment: (*\textrm{This is a comment statement;}*)
-        $n:=n/2$; $x:=x*x$ od;
-     { $n>0$ };
-     $n:=n-1$; $z:=z*x$ od;
-  print($z$). 
-end
-\end{lstlisting}
+O teste binomial estabelece que o efeito existe; esta seção o quantifica em duas escalas. A diferença de proporções entre vitória do mandante (49,7\%) e vitória do visitante (23,9\%) é de 25,9 pontos percentuais (IC 95\% $[24{,}5\%, 27{,}3\%]$). Traduzindo para a regra de pontuação do campeonato (3 pontos por vitória, 1 por empate), o mando vale 0,776 ponto por partida (IC 95\% $[0{,}725, 0{,}832]$, obtido por bootstrap com 2.000 reamostragens). Ao longo de uma temporada com 19 jogos em casa, isso equivale a aproximadamente 14,7 pontos adicionais (IC 95\% $[13{,}8, 15{,}8]$) --- uma diferença da ordem de várias posições na tabela final.
 
-\begin{algorithm}
-\caption{Calculate $y = x^n$}\label{algo1}
-\begin{algorithmic}[1]
-\Require $n \geq 0 \vee x \neq 0$
-\Ensure $y = x^n$ 
-\State $y \Leftarrow 1$
-\If{$n < 0$}\label{algln2}
-        \State $X \Leftarrow 1 / x$
-        \State $N \Leftarrow -n$
-\Else
-        \State $X \Leftarrow x$
-        \State $N \Leftarrow n$
-\EndIf
-\While{$N \neq 0$}
-        \If{$N$ is even}
-            \State $X \Leftarrow X \times X$
-            \State $N \Leftarrow N / 2$
-        \Else[$N$ is odd]
-            \State $y \Leftarrow y \times X$
-            \State $N \Leftarrow N - 1$
-        \EndIf
-\EndWhile
-\end{algorithmic}
-\end{algorithm}
+\subsection{Teste t pareado: como o mandante joga diferente}\label{subsec_tpareado}
 
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-\bigskip
-\begin{minipage}{\hsize}%
-\lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=pascal}% Set your language (you can change the language for each code-block optionally)
-%%% Start your code-block
-\begin{lstlisting}
-for i:=maxint to 0 do
-begin
-{ do nothing }
-end;
-Write('Case insensitive ');
-Write('Pascal keywords.');
-\end{lstlisting}
-\end{minipage}
+Para investigar o mecanismo por trás da vantagem, comparou-se estatisticamente, partida a partida, o desempenho do mandante e do visitante no mesmo jogo (n = 3.419, 2015--2023), usando teste t de Student pareado. Duas métricas foram escolhidas por captarem aspectos distintos do jogo: chutes (volume ofensivo) e posse de bola (controle de jogo).
 
-\section{Cross referencing}\label{sec8}
-
-Environments such as figure, table, equation and align can have a label
-declared via the \verb+\label{#label}+ command. For figures and table
-environments use the \verb+\label{}+ command inside or just
-below the \verb+\caption{}+ command. You can then use the
-\verb+\ref{#label}+ command to cross-reference them. As an example, consider
-the label declared for Figure~\ref{fig1} which is
-\verb+\label{fig1}+. To cross-reference it, use the command 
-\verb+Figure \ref{fig1}+, for which it comes up as
-``Figure~\ref{fig1}''. 
-
-To reference line numbers in an algorithm, consider the label declared for the line number 2 of Algorithm~\ref{algo1} is \verb+\label{algln2}+. To cross-reference it, use the command \verb+\ref{algln2}+ for which it comes up as line~\ref{algln2} of Algorithm~\ref{algo1}.
-
-\subsection{Details on reference citations}\label{subsec7}
-
-Standard \LaTeX\ permits only numerical citations. To support both numerical and author-year citations this template uses \verb+natbib+ \LaTeX\ package. For style guidance please refer to the template user manual.
-
-Here is an example for \verb+\cite{...}+: \cite{bib1}. Another example for \verb+\citep{...}+: \citep{bib2}. For author-year citation mode, \verb+\cite{...}+ prints Jones et al. (1990) and \verb+\citep{...}+ prints (Jones et al., 1990).
-
-All cited bib entries are printed at the end of this article: \cite{bib3}, \cite{bib4}, \cite{bib5}, \cite{bib6}, \cite{bib7}, \cite{bib8}, \cite{bib9}, \cite{bib10}, \cite{bib11}, \cite{bib12} and \cite{bib13}.
-
-\section{Examples for theorem like environments}\label{sec10}
-
-For theorem like environments, we require \verb+amsthm+ package. There are three types of predefined theorem styles exists---\verb+thmstyleone+, \verb+thmstyletwo+ and \verb+thmstylethree+ 
-
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
-\bigskip
-\begin{tabular}{|l|p{19pc}|}
-\hline
-\verb+thmstyleone+ & Numbered, theorem head in bold font and theorem text in italic style \\\hline
-\verb+thmstyletwo+ & Numbered, theorem head in roman font and theorem text in italic style \\\hline
-\verb+thmstylethree+ & Numbered, theorem head in bold font and theorem text in roman style \\\hline
+\begin{table}[h]
+\caption{Comparação mandante vs.\ visitante, teste t pareado (n = 3.419, 2015--2023)}\label{tab_tpareado}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Métrica & Mandante & Visitante & Razão M/V & $p$ & Cohen's $d$\\
+\midrule
+Chutes         & 14,52 & 11,10 & 1,31 & $3{,}05\times10^{-140}$ & 0,452\\
+Posse de bola  & 51,72\% & 48,28\% & 1,07 & $2{,}55\times10^{-21}$ & 0,164\\
+\botrule
 \end{tabular}
-\bigskip
-%%=============================================%%
-%% For presentation purpose, we have included  %%
-%% \bigskip command. Please ignore this.       %%
-%%=============================================%%
+\end{table}
 
-For mathematics journals, theorem styles can be included as shown in the following examples:
+Em ambas as métricas H0 (diferença média igual a zero) é rejeitada, mas as magnitudes divergem: o mandante chuta 31\% mais, com efeito de tamanho médio ($d = 0{,}45$), enquanto a posse de bola sobe apenas 7\%, com efeito pequeno ($d = 0{,}16$). Combinado ao fato de que a taxa de conversão de chutes em chutes no alvo é praticamente idêntica entre mandante (26,2\%) e visitante (25,9\%), o padrão sugere que o mandante não joga com mais qualidade técnica, mas ataca com mais volume e iniciativa.
 
-\begin{theorem}[Theorem subhead]\label{thm1}
-Example theorem text. Example theorem text. Example theorem text. Example theorem text. Example theorem text. 
-Example theorem text. Example theorem text. Example theorem text. Example theorem text. Example theorem text. 
-Example theorem text. 
-\end{theorem}
+Um padrão semelhante aparece na disciplina: o número médio de faltas cometidas é praticamente idêntico entre mandante (14,85) e visitante (14,84), mas o visitante recebe 11,4\% mais cartões amarelos (2,50 vs.\ 2,24 por jogo) e 42,0\% mais cartões vermelhos (0,150 vs.\ 0,106 por jogo). Normalizando pelo número de faltas, o visitante é advertido a cada 5,94 faltas cometidas, contra 6,62 do mandante.
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+\begin{table}[h]
+\caption{Estatísticas de jogo, mandante vs.\ visitante (média por partida, n = 3.419)}\label{tab_stats}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Métrica & Mandante & Visitante & Razão M/V\\
+\midrule
+Chutes no alvo        & 3,81  & 2,88  & 1,32\\
+Escanteios            & 5,91  & 4,49  & 1,32\\
+Passes                & 431,3 & 406,8 & 1,06\\
+Faltas                & 14,85 & 14,84 & 1,00\\
+Cartão amarelo/jogo   & 2,24  & 2,50  & 0,90\\
+Cartão vermelho/jogo  & 0,106 & 0,150 & 0,70\\
+\botrule
+\end{tabular}
+\end{table}
 
-\begin{proposition}
-Example proposition text. Example proposition text. Example proposition text. Example proposition text. Example proposition text. 
-Example proposition text. Example proposition text. Example proposition text. Example proposition text. Example proposition text. 
-\end{proposition}
+\subsection{Assimetria em placares elásticos}\label{subsec_placares}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+Como verificação adicional e independente dos testes formais, comparou-se a frequência de cada placar com a de seu espelho (por exemplo, 2$\times$1 vs.\ 1$\times$2), o que isola o efeito de mando sem exigir nenhum modelo estatístico. Nenhum par é simétrico, e a razão cresce com a margem de gols (Tabela~\ref{tab_placares}, Figura~\ref{fig_placares}): de 1,86$\times$ em vitórias por 1$\times$0 a 4,66$\times$ em vitórias por 4$\times$0. Esse padrão é consistente com um efeito que se acumula ao longo da partida --- pressão territorial sustentada, retração do adversário após sofrer o primeiro gol --- em vez de um efeito pontual e único.
 
-\begin{example}
-Phasellus adipiscing semper elit. Proin fermentum massa
-ac quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. Maecenas lacinia. Nam ipsum ligula, eleifend
-at, accumsan nec, suscipit a, ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. 
-\end{example}
+\begin{table}[h]
+\caption{Frequência de placares e seus espelhos (2003--2023)}\label{tab_placares}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Placar & Mandante vence & Visitante vence & Razão\\
+\midrule
+1$\times$0 & 1.110 & 598 & 1,86$\times$\\
+2$\times$0 & 709   & 308 & 2,30$\times$\\
+3$\times$0 & 375   & 122 & 3,07$\times$\\
+4$\times$0 & 149   & 32  & 4,66$\times$\\
+2$\times$1 & 812   & 512 & 1,59$\times$\\
+3$\times$1 & 369   & 149 & 2,48$\times$\\
+\botrule
+\end{tabular}
+\end{table}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/assimetria_placares.png}
+\caption{Frequência de placares a favor do mandante e do visitante, por margem de gols.}\label{fig_placares}
+\end{figure}
 
-\begin{remark}
-Phasellus adipiscing semper elit. Proin fermentum massa
-ac quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. Maecenas lacinia. Nam ipsum ligula, eleifend
-at, accumsan nec, suscipit a, ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. 
-\end{remark}
+\subsection{Vantagem por clube}\label{subsec_clube}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+Para descartar a hipótese de que o efeito agregado decorre da composição dos confrontos (times fortes jogando mais em casa contra times fracos), comparou-se o aproveitamento de pontos de cada clube em casa e fora, usando o próprio clube como controle. Entre os 32 clubes com ao menos 76 partidas como mandante, o diferencial médio foi de 25,6 pontos percentuais (dp~4,9), variando de 11,3~p.p.\ (Atlético-GO) a 35,4~p.p.\ (Athletico-PR). Nenhum dos 32 clubes analisados apresentou diferencial negativo.
 
-\begin{definition}[Definition sub head]
-Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. 
-\end{definition}
+A vantagem de mando também se mostrou praticamente independente da força geral do clube: a correlação entre o aproveitamento médio de pontos do clube e seu diferencial casa--fora foi de $r = -0{,}02$ ($R^2 = 0{,}00$) (Figura~\ref{fig_forca}). Times mais fortes vencem mais tanto em casa quanto fora, mas o acréscimo proporcionado pelo mando é essencialmente o mesmo em todos os quartis de força (variando entre 25,0 e 27,2~p.p.).
 
-Additionally a predefined ``proof'' environment is available: \verb+\begin{proof}+ \verb+...+ \verb+\end{proof}+. This prints a ``Proof'' head in italic font style and the ``body text'' in roman font style with an open square at the end of each proof environment. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/forca_vs_mando.png}
+\caption{Relação entre a força geral do clube (aproveitamento médio) e seu diferencial de mando (casa $-$ fora).}\label{fig_forca}
+\end{figure}
 
-\begin{proof}
-Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. 
-\end{proof}
+\subsection{Qui-quadrado: o efeito do público (portões fechados)}\label{subsec_chi2}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+Entre agosto de 2020 e setembro de 2021, partidas do Campeonato Brasileiro foram disputadas sem público por determinação sanitária, oferecendo um quase-experimento para investigar se a torcida é um dos mecanismos da vantagem de mando. Comparou-se a distribuição de resultados em três períodos --- com público, portões fechados e retorno do público --- por meio de um teste qui-quadrado de homogeneidade (140 partidas de transição foram excluídas).
 
-\begin{proof}[Proof of Theorem~{\upshape\ref{thm1}}]
-Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. 
-\end{proof}
+\textbf{H0:} a distribuição dos resultados é a mesma nos três períodos.\\
+\textbf{H1:} ao menos um período difere.
 
-\noindent
-For a quote environment, use \verb+\begin{quote}...\end{quote}+
-\begin{quote}
-Quoted text example. Aliquam porttitor quam a lacus. Praesent vel arcu ut tortor cursus volutpat. In vitae pede quis diam bibendum placerat. Fusce elementum
-convallis neque. Sed dolor orci, scelerisque ac, dapibus nec, ultricies ut, mi. Duis nec dui quis leo sagittis commodo.
-\end{quote}
+\begin{table}[h]
+\caption{Taxa de vitória do mandante por período de acesso do público}\label{tab_chi2}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Período & $n$ & Vitória do mandante & IC 95\%\\
+\midrule
+Com público (até mar/2020)            & 6.885 & 50,7\% & $[49{,}5\%, 51{,}8\%]$\\
+Portões fechados (ago/2020--set/2021) & 594   & 42,4\% & $[38{,}4\%, 46{,}5\%]$\\
+Público de volta (dez/2021 em diante) & 786   & 45,9\% & $[42{,}4\%, 49{,}5\%]$\\
+\botrule
+\end{tabular}
+\end{table}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text (refer Figure~\ref{fig1}). Sample body text. Sample body text. Sample body text (refer Table~\ref{tab3}). 
+O teste rejeita H0 ($\chi^2 = 20{,}98$, gl~$=4$, $p = 3{,}20\times10^{-4}$; Figura~\ref{fig_portoes}). A queda de 8,3 pontos percentuais entre o período com público e o período sem público é maior que a incerteza das duas estimativas, e é compatível com a hipótese de que a torcida seja um componente relevante da vantagem de mando. No entanto, o efeito não desaparece: mesmo sem público, o mandante venceu 42,4\% contra 27,6\% do visitante, restando uma vantagem substancial atribuível a mecanismos que não dependem de torcida, como familiaridade com o campo e desgaste da viagem do visitante. O intervalo do período de retorno do público (45,9\%) se sobrepõe tanto ao período anterior quanto ao posterior, de modo que a recuperação da vantagem é sugestiva, mas não conclusiva.
 
-\section{Methods}\label{sec11}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/portoes_fechados.png}
+\caption{Taxa de vitória do mandante nos três períodos de acesso do público, com IC 95\%.}\label{fig_portoes}
+\end{figure}
 
-Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work. Authors are encouraged to include RIIDs where appropriate. 
+\subsection{Síntese dos testes}\label{subsec_sintese}
 
-\textbf{Ethical approval declarations} (only required where applicable) Any article reporting experiment/s carried out on (i)~live vertebrate (or higher invertebrates), (ii)~humans or (iii)~human samples must include an unambiguous statement within the methods section that meets the following requirements: 
+\begin{table}[h]
+\caption{Síntese dos quatro testes de hipótese realizados}\label{tab_sintese}
+\begin{tabular}{@{}p{2.3cm}p{3.5cm}p{4.3cm}c@{}}
+\toprule
+Teste & H0 & Resultado & Decisão\\
+\midrule
+Binomial exato & Mandante vence 50\% das decididas & 67,6\%, IC95 $[66{,}4\%, 68{,}7\%]$; $p \approx 1{,}1\times10^{-171}$ & Rejeita H0\\
+$t$ pareado & Médias iguais em chutes e posse & $p<0{,}001$ nas duas; $d=0{,}45$ e $0{,}16$ & Rejeita H0\\
+Qui-quadrado & Resultados iguais nos três períodos & $50{,}7\% \to 42{,}4\% \to 45{,}9\%$; $p=3{,}2\times10^{-4}$ & Rejeita H0\\
+\botrule
+\end{tabular}
+\end{table}
 
-\begin{enumerate}[1.]
-\item Approval: a statement which confirms that all experimental protocols were approved by a named institutional and/or licensing committee. Please identify the approving body in the methods section
+\section{Discussão}\label{sec12}
 
-\item Accordance: a statement explicitly saying that the methods were carried out in accordance with the relevant guidelines and regulations
+Os resultados obtidos convergem para um quadro consistente sobre a vantagem de mando no Campeonato Brasileiro. Em primeiro lugar, o efeito é robusto: está presente em todas as 21 temporadas analisadas e em todos os 32 clubes com amostra suficiente, e é estatisticamente indistinguível do acaso apenas sob a hipótese nula de ausência de vantagem --- hipótese amplamente rejeitada pelo teste binomial exato.
 
-\item Informed consent (for experiments involving humans or human tissue samples): include a statement confirming that informed consent was obtained from all participants and/or their legal guardian/s
-\end{enumerate}
+Em segundo lugar, os dados favorecem uma explicação baseada em volume e iniciativa territorial, e não em superioridade técnica. O mandante chuta cerca de 31\% mais que o visitante, mas converte esses chutes em gols na mesma taxa (26,2\% contra 25,9\%), e sua posse de bola é apenas marginalmente maior. Esse padrão é mais compatível com pressão territorial sustentada do que com um time que ``joga melhor'' em casa.
 
-If your manuscript includes potentially identifying patient/participant information, or if it describes human transplantation research, or if it reports results of a clinical trial then  additional information will be required. Please visit (\url{https://www.nature.com/nature-research/editorial-policies}) for Nature Portfolio journals, (\url{https://www.springer.com/gp/authors-editors/journal-author/journal-author-helpdesk/publishing-ethics/14214}) for Springer Nature journals, or (\url{https://www.biomedcentral.com/getpublished/editorial-policies\#ethics+and+consent}) for BMC.
+Em terceiro lugar, a assimetria disciplinar --- faltas praticamente idênticas, mas cartões amarelos e vermelhos sistematicamente mais frequentes contra o visitante --- é consistente com viés de arbitragem sob pressão de torcida, hipótese já discutida na literatura de economia do esporte, embora explicações alternativas (diferenças qualitativas no tipo de falta cometida por quem defende mais, ou maior contestação de quem está perdendo, já que o visitante perde mais) não possam ser descartadas com os dados disponíveis.
 
-\section{Discussion}\label{sec12}
+O quase-experimento dos portões fechados oferece a evidência mais direta sobre o papel da torcida: a vantagem de mando caiu de forma estatisticamente significativa na ausência de público, mas não desapareceu. Isso sugere que a vantagem de mando é multicausal, combinando um componente ligado à torcida com componentes estruturais (familiaridade com o campo, desgaste de viagem do visitante) que persistem independentemente do público.
 
-Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 
+A ausência de correlação entre a força do clube e o tamanho de sua vantagem de mando é outro resultado notável: contraria a intuição de que clubes grandes, com estádios maiores e torcidas mais numerosas, extrairiam mais vantagem do mando. Os dados indicam, ao contrário, que o mando funciona como um efeito aditivo e aproximadamente uniforme, somando cerca de 25 pontos percentuais ao aproveitamento de qualquer clube, independentemente de sua força.
 
-\section{Conclusion}\label{sec13}
+\textbf{Limitações.} Os intervalos de confiança reportados pressupõem partidas independentes; há dependência residual não modelada (adversários de forças diferentes, autocorrelação de desempenho ao longo da temporada), de modo que os intervalos reais são provavelmente um pouco mais largos que os apresentados. As estatísticas de jogo (chutes, posse, faltas) só têm cobertura real a partir de 2015, restringindo a Seção~\ref{subsec_tpareado} a nove das 21 temporadas. O período de portões fechados coincidiu com uma temporada atípica em múltiplos eixos (calendário condensado, ausência de pré-temporada, desfalques por surtos de COVID-19), o que impede isolar cirurgicamente o efeito da ausência de torcida do efeito de uma temporada anômala. Por fim, nenhuma das análises estabelece causalidade em sentido estrito; o desenho de portões fechados é o mais próximo de um experimento controlado que os dados permitem, mas ainda carrega as ressalvas anteriores. A série é restrita ao Campeonato Brasileiro, e a generalização para outras ligas exigiria replicação.
 
-Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations. 
+\section{Conclusão}\label{sec13}
 
-In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements. 
+Este trabalho buscou responder se jogar em casa altera a probabilidade de vitória no Campeonato Brasileiro e, em caso afirmativo, por quanto e por quê. A resposta à primeira pergunta é inequívoca: entre partidas decididas, o mandante vence 67,6\% delas (IC 95\% $[66{,}4\%, 68{,}7\%]$), muito acima dos 50\% esperados sob ausência de vantagem ($p \approx 1{,}15\times10^{-171}$), efeito positivo em todas as 21 temporadas e em todos os 32 clubes analisados.
+
+Quanto à magnitude, o mando acrescenta cerca de 26 pontos percentuais à probabilidade de vitória e vale aproximadamente 0,78 ponto por partida, equivalente a cerca de 14,7 pontos ao longo de uma temporada com 19 jogos em casa --- uma diferença capaz de mover um clube várias posições na tabela final.
+
+Quanto ao mecanismo, os dados indicam que o mandante ataca com mais volume (31\% mais chutes) sem ganho de eficiência, e é beneficiado por uma assimetria disciplinar na arbitragem (42\% mais cartões vermelhos contra o visitante). O quase-experimento dos portões fechados mostra que a torcida é um componente relevante --- a vantagem caiu de 50,7\% para 42,4\% na ausência de público --- mas não o único, já que uma vantagem substancial permanece mesmo sem torcida nos estádios. A vantagem, além disso, mostrou-se estatisticamente estável ao longo do tempo em termos relativos, ainda que a diferença de gols tenha diminuído cerca de um terço entre o início e o fim da série, e mostrou-se uniforme entre clubes de diferentes forças, sem evidência de que times maiores se beneficiem mais do fator casa.
+
+Como direções futuras, seria útil (i) modelar a dependência entre partidas de uma mesma temporada para refinar os intervalos de confiança; (ii) explorar dados de distância de viagem e altitude para quantificar separadamente o componente logístico da vantagem de mando; e (iii) replicar as análises em outras ligas sul-americanas para avaliar até que ponto os padrões aqui descritos são específicos do futebol brasileiro.
+
 
 \backmatter
-
-\bmhead{Supplementary information}
-
-If your article has accompanying supplementary file/s please state so here. 
-
-Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
-
-Please refer to Journal-level guidance for any specific requirements.
-
-\bmhead{Acknowledgements}
-
-Acknowledgements are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
-
-Please refer to Journal-level guidance for any specific requirements.
-
-\section*{Declarations}
-
-Some journals require declarations to be submitted in a standardised format. Please check the Instructions for Authors of the journal to which you are submitting to see if you need to complete this section. If yes, your manuscript must contain the following sections under the heading `Declarations':
-
-\begin{itemize}
-\item Funding
-\item Conflict of interest/Competing interests (check journal-specific guidelines for which heading to use)
-\item Ethics approval and consent to participate
-\item Consent for publication
-\item Data availability 
-\item Materials availability
-\item Code availability 
-\item Author contribution
-\end{itemize}
-
-\noindent
-If any of the sections are not relevant to your manuscript, please include the heading and write `Not applicable' for that section. 
-
-%%===================================================%%
-%% For presentation purpose, we have included        %%
-%% \bigskip command. Please ignore this.             %%
-%%===================================================%%
-\bigskip
-\begin{flushleft}%
-Editorial Policies for:
-
-\bigskip\noindent
-Springer journals and proceedings: \url{https://www.springer.com/gp/editorial-policies}
-
-\bigskip\noindent
-Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial-policies}
-
-\bigskip\noindent
-\textit{Scientific Reports}: \url{https://www.nature.com/srep/journal-policies/editorial-policies}
-
-\bigskip\noindent
-BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
-\end{flushleft}
-
-\begin{appendices}
-
-\section{Section title of first appendix}\label{secA1}
-
-An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
-
-%%=============================================%%
-%% For submissions to Nature Portfolio Journals %%
-%% please use the heading ``Extended Data''.   %%
-%%=============================================%%
-
-%%=============================================================%%
-%% Sample for another appendix section			       %%
-%%=============================================================%%
-
-%% \section{Example of another appendix section}\label{secA2}%
-%% Appendices may be used for helpful, supporting or essential material that would otherwise 
-%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
-%% tables and equations etc.
-
-\end{appendices}
-
-%%===========================================================================================%%
-%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
-%% system, please include the references within the manuscript file itself. You may do this  %%
-%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
-%% file, and delete the associated \verb+\bibliography+ commands.                            %%
-%%===========================================================================================%%
-
-\bibliography{sn-bibliography}% common bib file
-%% if required, the content of .bbl file can be included here once bbl is generated
-%%\input sn-article.bbl
 
 \end{document}
