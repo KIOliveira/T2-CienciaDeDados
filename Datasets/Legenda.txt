@@ -52,3 +52,43 @@ Atleta - Nome do atleta punido pelo cartão
 num_camisa - Número da camisa do atleta
 Posicao - Posição na partida em que o atleta se encontra
 Minuto - Minuto na partida em que o cartão foi aplicado
+
+
+Legenda - campeonato_brasileiro_tratado.csv
+partida_id - ID da partida
+data - Data da partida
+ano - Temporada
+rodata - Rodada da partida
+mandante - Clube mandante
+visitante - Clube visitante
+gols_mandante - Gols que o clube mandante fez na partida
+gols_visitante - Gols que o clube visitante fez na partida
+resultado - Vitória Mandante, Empate ou Vitória Visitante
+total_gols - Total de gols da partida
+saldo_mandante - Gols do mandante menos gols do visitante
+vencedor - Clube vencedor da partida. Quando tiver "-", é um empate
+arena - Arena que ocorreu a partida
+mandante_Estado - Estado do clube mandante
+visitante_Estado - Estado do clube visitante
+gols_penalti_mandante - Gols de pênalti do mandante na partida
+gols_penalti_visitante - Gols de pênalti do visitante na partida
+gols_contra_mandante - Gols contra a favor do mandante
+gols_contra_visitante - Gols contra a favor do visitante
+cartao_amarelo_mandante - Cartões amarelos recebidos pelo mandante
+cartao_amarelo_visitante - Cartões amarelos recebidos pelo visitante
+cartao_vermelho_mandante - Cartões vermelhos recebidos pelo mandante
+cartao_vermelho_visitante - Cartões vermelhos recebidos pelo visitante
+chutes_mandante - Finalizações do mandante
+chutes_visitante - Finalizações do visitante
+chutes_no_alvo_mandante - Finalizações do mandante na direção do gol
+chutes_no_alvo_visitante - Finalizações do visitante na direção do gol
+escanteios_mandante - Escanteios do mandante
+escanteios_visitante - Escanteios do visitante
+faltas_mandante - Faltas cometidas pelo mandante
+faltas_visitante - Faltas cometidas pelo visitante
+impedimentos_mandante - Impedimentos do mandante
+impedimentos_visitante - Impedimentos do visitante
+passes_mandante - Passes dados pelo mandante
+passes_visitante - Passes dados pelo visitante
+posse_de_bola_mandante - Percentual de posse de bola do mandante
+posse_de_bola_visitante - Percentual de posse de bola do visitante
